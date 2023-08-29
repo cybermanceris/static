@@ -14,31 +14,31 @@ task:
   matrix:
   - name: aarch64
     env:
-      TARGET: aarch64-unknown-freebsd@13
+      TARGET: aarch64-unknown-freebsd
   - name: armv6
     env:
-      TARGET: armv6-unknown-freebsd@13
+      TARGET: armv6-unknown-freebsd
   - name: armv7
     env:
-      TARGET: armv7-unknown-freebsd@13
+      TARGET: armv7-unknown-freebsd
   - name: i686
     env:
-      TARGET: i686-unknown-freebsd@13
+      TARGET: i686-unknown-freebsd
   - name: powerpc
     env:
-      TARGET: powerpc-unknown-freebsd@13
+      TARGET: powerpc-unknown-freebsd
   - name: powerpc64
     env:
-      TARGET: powerpc64-unknown-freebsd@13
+      TARGET: powerpc64-unknown-freebsd
   - name: powerpc64le
     env:
-      TARGET: powerpc64le-unknown-freebsd@13
+      TARGET: powerpc64le-unknown-freebsd
   - name: riscv64gc
     env:
-      TARGET: riscv64gc-unknown-freebsd@13
+      TARGET: riscv64gc-unknown-freebsd
   - name: x86_64
     env:
-      TARGET: x86_64-unknown-freebsd@13
+      TARGET: x86_64-unknown-freebsd
   timeout_in: 120m
   install_script:
   - pkg install -y rust-nightly
