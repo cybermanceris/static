@@ -42,7 +42,7 @@ task:
   timeout_in: 120m
   install_script:
     - mkdir -p /usr/local/etc/pkg/repos
-    - sed -e 's/quarterly/latest' /etc/pkg/FreeBSD.conf > /usr/local/etc/pkg/repos/FreeBSD.conf
+    - sed -e "s/quarterly/latest" /etc/pkg/FreeBSD.conf > /usr/local/etc/pkg/repos/FreeBSD.conf
     - pkg install -y rust-nightly
 
   build_script:
