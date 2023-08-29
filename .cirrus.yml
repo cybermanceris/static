@@ -10,9 +10,6 @@ compute_engine_instance:
   memory: 8G
   disk: 40
 
-env:
-  PKG_FORMAT: tar
-
 task:
   matrix:
   - name: aarch64
@@ -47,7 +44,7 @@ task:
   - pkg install -y rust-nightly
 
   build_script:
-  - cargo install --Z build-std --verbose --target ${TARGET} ripgrep
+  - cargo install -Z build-std --verbose --target ${TARGET} ripgrep
     #  setup_script:
     #  - uname -a
     #  - gpart show
