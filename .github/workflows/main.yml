@@ -41,3 +41,11 @@ jobs:
           target: ${{ matrix.target }}
       - name: Build and Install ripgrep
         run: cargo install --verbose -Z build-std ripgrep
+      - uses: actions/download-artifact@v3
+        with:
+          name: bin
+          path: ./.cargo/bin
+      - run: tar -czvf ${{ matrix.name }}.tar.gz .cargo/bin
+      - uses: diamondburned/action-upload-release@main
+        with:
+          files: ${{ matrix.name }}.tar.gz
