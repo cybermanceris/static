@@ -44,8 +44,8 @@ jobs:
       - uses: actions/download-artifact@v3
         with:
           name: bin
-          path: ./.cargo/bin
-      - run: tar -czvf ${{ matrix.name }}.tar.gz .cargo/bin
+          path: /home/runner/.cargo/bin
+      - run: tar -czvf ${{ matrix.name }}.tar.gz /home/runner/.cargo/bin
       - uses: diamondburned/action-upload-release@main
         with:
           files: ${{ matrix.name }}.tar.gz
