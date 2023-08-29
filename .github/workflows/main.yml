@@ -15,6 +15,10 @@ jobs:
         include:
           - name: aarch64
             target: aarch64-unknown-freebsd@13
+          - name: armv6
+            target: armv6-unknown-freebsd@13
+          - name: armv7
+            target: armv7-unknown-freebsd@13
           - name: i686
             target: i686-unknown-freebsd@13
           - name: powerpc
