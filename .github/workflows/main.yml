@@ -40,7 +40,7 @@ jobs:
         with:
           target: ${{ matrix.target }}
       - name: Build and Install ripgrep
-        run: cargo install --verbose -Z build-std --root .cargo/${{ matrix.name }}
+        run: cargo install --verbose -Z build-std --root .cargo/${{ matrix.name }} ripgrep
       - run: pwd
       - run: ls -la
       - run: tar -czvf ${{ matrix.name }}.tar.gz .cargo/${{ matrix.name }}/bin
