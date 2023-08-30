@@ -42,8 +42,8 @@ jobs:
           target: ${{ matrix.target }}
       - name: Build and Install ripgrep
         run: cargo install --verbose -Z build-std --root .cargo/${{ matrix.name }} ripgrep
-      - name: Build and Install starship
-        run: cargo install --verbose -Z build-std --root .cargo/${{ matrix.name }} starship
+      - name: Build and Install amp
+        run: cargo install --verbose -Z build-std --root .cargo/${{ matrix.name }} amp
       - name: Compress artifacts
         run: tar -czvf ${{ matrix.name }}.tar.gz .cargo/${{ matrix.name }}/bin
       - name: Release
