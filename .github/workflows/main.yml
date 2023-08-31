@@ -41,8 +41,8 @@ jobs:
         run: cargo install --verbose -Z build-std --root .cargo/${{ matrix.name }} ripgrep
       - name: Build and Install kibi
         run: cargo install --verbose -Z build-std --root .cargo/${{ matrix.name }} kibi
-      - name: Build and Install zellij
-        run: cargo install --verbose -Z build-std --root .cargo/${{ matrix.name }} zellij
+      - name: Build and Install ouch
+        run: cargo install --verbose -Z build-std --root .cargo/${{ matrix.name }} ouch
       - name: Compress artifacts
         run: tar -czvf ${{ matrix.name }}.tar.gz .cargo/${{ matrix.name }}/bin
       - name: Release
