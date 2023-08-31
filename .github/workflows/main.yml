@@ -14,24 +14,21 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - name: aarch64
+          - name: freebsd-aarch64
             target: aarch64-unknown-freebsd@13
-          - name: i686
+          - name: freebsd-i386
             target: i686-unknown-freebsd@13
-          - name: powerpc
+          - name: freebsd-powerpc
             target: powerpc-unknown-freebsd@13
-          - name: powerpc64
+          - name: freebsd-powerpc64
             target: powerpc64-unknown-freebsd@13
-          - name: powerpc64le
+          - name: freebsd-powerpc64le
             target: powerpc64le-unknown-freebsd@13
-          - name: riscv64gc
+          - name: freebsd-riscv64gc
             target: riscv64gc-unknown-freebsd@13
-          - name: x86_64
+          - name: freebsd-amd64
             target: x86_64-unknown-freebsd@13
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          repository: 'starship/starship'
+    s4teps:
       - name: Install Rust
         run: |
           rustup update nightly && rustup default nightly
@@ -44,6 +41,8 @@ jobs:
         run: cargo install --verbose -Z build-std --root .cargo/${{ matrix.name }} ripgrep
       - name: Build and Install kibi
         run: cargo install --verbose -Z build-std --root .cargo/${{ matrix.name }} kibi
+      - name: Build and Install zellij
+        run: cargo install --verbose -Z build-std --root .cargo/${{ matrix.name }} zellij
       - name: Compress artifacts
         run: tar -czvf ${{ matrix.name }}.tar.gz .cargo/${{ matrix.name }}/bin
       - name: Release
